@@ -29,8 +29,27 @@ import PasteFromOffice from '@ckeditor/ckeditor5-paste-from-office/src/pastefrom
 import Table from '@ckeditor/ckeditor5-table/src/table';
 import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
 import TextTransformation from '@ckeditor/ckeditor5-typing/src/texttransformation';
+// 插件
+import Underline from '@ckeditor/ckeditor5-basic-styles/src/underline';
+import Strikethrough from '@ckeditor/ckeditor5-basic-styles/src/strikethrough';
+import Code from '@ckeditor/ckeditor5-basic-styles/src/code';
+import Subscript from '@ckeditor/ckeditor5-basic-styles/src/subscript';
+import Superscript from '@ckeditor/ckeditor5-basic-styles/src/superscript';
+import Highlight from '@ckeditor/ckeditor5-highlight/src/highlight';
+import Alignment from '@ckeditor/ckeditor5-alignment/src/alignment';
+import HorizontalLine from '@ckeditor/ckeditor5-horizontal-line/src/horizontalline';
+import TodoList from '@ckeditor/ckeditor5-list/src/todolist';
+import IndentBlock from '@ckeditor/ckeditor5-indent/src/indentblock';
+import FontFamily from '@ckeditor/ckeditor5-font/src/fontfamily';
+import FontSize from '@ckeditor/ckeditor5-font/src/fontsize';
+import FontBackgroundColor from '@ckeditor/ckeditor5-font/src/fontbackgroundcolor';
+import SpecialCharacters from '@ckeditor/ckeditor5-special-characters/src/specialcharacters';
+import SpecialCharactersCurrency from '@ckeditor/ckeditor5-special-characters/src/specialcharacterscurrency';
+import SpecialCharactersMathematical from '@ckeditor/ckeditor5-special-characters/src/specialcharactersmathematical';
+import RemoveFormat from '@ckeditor/ckeditor5-remove-format/src/removeformat';
+import FullScreen from './FullScreen/index';
 
-export default class ClassicEditor extends ClassicEditorBase {}
+export default class ClassicEditor extends ClassicEditorBase { }
 
 // Plugins to include in the build.
 ClassicEditor.builtinPlugins = [
@@ -49,6 +68,7 @@ ClassicEditor.builtinPlugins = [
 	ImageToolbar,
 	ImageUpload,
 	Indent,
+	IndentBlock,
 	Link,
 	List,
 	MediaEmbed,
@@ -56,7 +76,24 @@ ClassicEditor.builtinPlugins = [
 	PasteFromOffice,
 	Table,
 	TableToolbar,
-	TextTransformation
+	TextTransformation,
+	Alignment,
+	Underline,
+	Strikethrough,
+	Code,
+	Subscript,
+	Superscript,
+	Highlight,
+	HorizontalLine,
+	TodoList,
+	FontFamily,
+	FontSize,
+	SpecialCharacters,
+	SpecialCharactersCurrency,
+	SpecialCharactersMathematical,
+	RemoveFormat,
+	FontBackgroundColor,
+	FullScreen
 ];
 
 // Editor configuration.
@@ -70,8 +107,15 @@ ClassicEditor.defaultConfig = {
 			'link',
 			'bulletedList',
 			'numberedList',
+			'highlight',
+			'underline',
+			'strikethrough',
+			'code',
+			'subscript',
+			'superscript',
 			'|',
 			'indent',
+			'indentBlock',
 			'outdent',
 			'|',
 			'imageUpload',
@@ -79,8 +123,21 @@ ClassicEditor.defaultConfig = {
 			'insertTable',
 			'mediaEmbed',
 			'undo',
-			'redo'
-		]
+			'redo',
+			'selectAll',
+			'alignment',
+			'|',
+			'horizontalLine',
+			'todoList',
+			'fontSize',
+			'fontFamily',
+			'fontColor',
+			'fontbackgroundcolor',
+			'specialCharacters',
+			'removeFormat',
+			'FullScreen'
+		],
+		shouldNotGroupWhenFull: true
 	},
 	image: {
 		toolbar: [
