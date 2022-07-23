@@ -1,5 +1,5 @@
 {
-  "name": "@ckeditor/ckeditor5-build-classic",
+  "name": "LeeEditor",
   "version": "19.0.0",
   "description": "The LeeEditor build of CKEditor 5 – the best browser-based rich text editor.",
   "keywords": [
